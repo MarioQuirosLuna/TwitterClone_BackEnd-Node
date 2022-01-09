@@ -1,13 +1,13 @@
 # Twitter-Clone_Back-end
 
-![GitHub issues](https://img.shields.io/github/issues/MarioQuirosLuna/Readme-Template)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/MarioQuirosLuna/Readme-Template)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/MarioQuirosLuna/Readme-Template)
+![GitHub issues](https://img.shields.io/github/issues/MarioQuirosLuna/Twitter-Clone_Back-end)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/MarioQuirosLuna/Twitter-Clone_Back-end)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/MarioQuirosLuna/Twitter-Clone_Back-end)
 
-[![GitHub contributors](https://img.shields.io/github/contributors/MarioQuirosLuna/Readme-Template.svg?color=blue)](https://github.com/MarioQuirosLuna/Readme-Template/network)
-![GitHub repo size](https://img.shields.io/github/repo-size/MarioQuirosLuna/Readme-template)
-![GitHub language count](https://img.shields.io/github/languages/count/MarioQuirosLuna/Readme-template)
-![GitHub forks](https://img.shields.io/github/forks/MarioQuirosLuna/Readme-template)
+[![GitHub contributors](https://img.shields.io/github/contributors/MarioQuirosLuna/Twitter-Clone_Back-end.svg?color=blue)](https://github.com/MarioQuirosLuna/Twitter-Clone_Back-end/network)
+![GitHub repo size](https://img.shields.io/github/repo-size/MarioQuirosLuna/Twitter-Clone_Back-end)
+![GitHub language count](https://img.shields.io/github/languages/count/MarioQuirosLuna/Twitter-Clone_Back-end)
+![GitHub forks](https://img.shields.io/github/forks/MarioQuirosLuna/Twitter-Clone_Back-end)
 
 ## ✨ Demo.
 
