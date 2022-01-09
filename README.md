@@ -77,10 +77,27 @@
 ## 🚀 Getting Started.
 
    ### 📌 Prerequisites and dependencies.
+   
+   * ![Express](https://img.shields.io/badge/express-v.4.17.2-111)
+   * ![Mongoose](https://img.shields.io/badge/Mongoose-v.6.1.5-111)
 
    ### 👉 Installation.
+   
+   In your local repository
+   ```
+   npm install
+   ```
 
    ### ⚡ Executing.
+   
+   * Developer
+   ```
+   npm run dev
+   ```
+   * Production
+   ```
+   npm run start
+   ```
 
 ## ☕ Collaborators.
   * [![Mario Quiros Luna](https://custom-icon-badges.herokuapp.com/badge/-Mario%20Quirós%20Luna-%23181717?style=flat&logo=github&logoColor=white&labelColor=111)](https://github.com/MarioQuirosLuna)
