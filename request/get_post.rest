@@ -1,0 +1,3 @@
+//GET ALL POST
+GET http://localhost:3001/api/home
+
