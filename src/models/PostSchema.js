@@ -3,7 +3,7 @@ const { model, Schema } = require('mongoose')
 const postSchema = new Schema({
 	nameUser: String,
 	username: String,
-	postTime: { type: Date, default: Date.now() },
+	postTime: { type: Date, default: new Date() },
 	text_posted: String,
 	media_posted: String,
 	comments: Array,
@@ -14,7 +14,6 @@ const postSchema = new Schema({
 postSchema.set('toJSON', {
 	transform: (document, returnedObject) => {
 		returnedObject.id = returnedObject._id
-		returnedObject.postTime = new Date(document.postTime.getTime() - (new Date().getTimezoneOffset() * 60000))
 		delete returnedObject._id
 		delete returnedObject.__v
 	}
