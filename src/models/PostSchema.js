@@ -14,6 +14,7 @@ const postSchema = new Schema({
 postSchema.set('toJSON', {
 	transform: (document, returnedObject) => {
 		returnedObject.id = returnedObject._id
+		returnedObject.postTime = new Date(document.postTime.getTime() - (new Date().getTimezoneOffset() * 60000))
 		delete returnedObject._id
 		delete returnedObject.__v
 	}
