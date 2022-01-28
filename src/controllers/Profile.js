@@ -1,5 +1,7 @@
 const profileRouter = require('express').Router()
 const User = require('../models/UserSchema')
+const Posts = require('../models/PostSchema')
+
 
 /**
  * PROFILE
@@ -16,6 +18,15 @@ profileRouter.get('/:username', async (req, res, next) => {
 				next()
 			}
 		}).catch(err => next(err))
+})
+
+profileRouter.get('/posts/:username', async (req, res, next) => {
+	const { username } = req.params
+
+	Posts
+		.find({ username: username })
+		.then(posts => res.json(posts))
+		.catch(err => next(err))
 })
 
 module.exports = profileRouter

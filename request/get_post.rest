@@ -1,3 +1,6 @@
 //GET ALL POST
 GET http://localhost:3001/api/home
 
+####
+
+GET http://localhost:3001/api/user/posts/@UserTest
