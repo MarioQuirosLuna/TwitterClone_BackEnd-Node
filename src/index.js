@@ -10,6 +10,7 @@ const handleError = require('./middleware/handleErrors')
 
 const homeRouter = require('./controllers/Home')
 const profileRouter = require('./controllers/Profile')
+const postRouter = require('./controllers/Post')
 
 app.use(cors())
 app.use(express.json())
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/home', homeRouter)
 app.use('/api/user', profileRouter)
+app.use('/api/post', postRouter)
 
 app.use(notFound)
 app.use(handleError)
