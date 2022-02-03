@@ -1,6 +1,7 @@
 const { model, Schema } = require('mongoose')
 
 const postSchema = new Schema({
+	user_photo: String,
 	nameUser: String,
 	username: String,
 	postTime: { type: Date, default: new Date() },

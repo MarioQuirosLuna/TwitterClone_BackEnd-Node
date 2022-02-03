@@ -1,0 +1,13 @@
+POST http://localhost:3001/api/post
+Content-Type: application/json
+
+{
+    "user_photo": null,
+	"nameUser": "Test2",
+	"username": "@Test2",
+	"text_posted": "Im a test 2",
+	"media_posted": null,
+	"comments": [],
+	"retweets": [],
+	"likes": []
+}
