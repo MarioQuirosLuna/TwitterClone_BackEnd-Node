@@ -10,12 +10,8 @@ postRouter.post('/', async (req, res, next) => {
 		nameUser,
 		username,
 		text_posted,
-		media_posted,
-		comments,
-		retweets,
-		likes
+		media_posted
 	} = req.body
-
 	try {
 		let newPost = new Post({
 			user_photo,
@@ -23,11 +19,10 @@ postRouter.post('/', async (req, res, next) => {
 			username,
 			text_posted,
 			media_posted,
-			comments,
-			retweets,
-			likes
+			comments: [],
+			retweets: [],
+			likes: []
 		})
-
 		const savedPost = await newPost.save()
 
 		res.status(201)
