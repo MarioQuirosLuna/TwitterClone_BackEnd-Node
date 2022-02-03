@@ -25,6 +25,7 @@ profileRouter.get('/posts/:username', async (req, res, next) => {
 
 	Posts
 		.find({ username: username })
+		.sort({ 'postTime': 'desc' })
 		.then(posts => res.json(posts))
 		.catch(err => next(err))
 })
