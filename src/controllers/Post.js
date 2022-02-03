@@ -17,6 +17,7 @@ postRouter.post('/', async (req, res, next) => {
 			user_photo,
 			nameUser,
 			username,
+			postTime: new Date(),
 			text_posted,
 			media_posted,
 			comments: [],
