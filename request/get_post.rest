@@ -3,4 +3,8 @@ GET http://localhost:3001/api/home
 
 ####
 
+GET http://localhost:3001/api/post/@UserTest/61ec621d6e95103c95202e85
+
+####
+
 GET http://localhost:3001/api/user/posts/@UserTest
