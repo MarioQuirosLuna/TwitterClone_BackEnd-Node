@@ -9,7 +9,6 @@ postRouter.get('/:username/:id', async (req, res, next) => {
 		username,
 		id
 	} = req.params
-	console.log(req.params)
 	Post
 		.findOne({
 			_id: id,
