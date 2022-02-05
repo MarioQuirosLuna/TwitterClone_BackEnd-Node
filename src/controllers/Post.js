@@ -29,9 +29,7 @@ postRouter.post('/', async (req, res, next) => {
 		nameUser,
 		username,
 		text_posted,
-		media_posted,
-		parentTweetUserName,
-		parentTweetId
+		media_posted
 	} = req.body
 	try {
 		let newPost = new Post({
@@ -40,14 +38,11 @@ postRouter.post('/', async (req, res, next) => {
 			username,
 			postTime: new Date(),
 			text_posted,
-			parentTweetUserName,
-			parentTweetId,
 			media_posted,
 			comments: [],
 			retweets: [],
 			likes: []
 		})
-		console.log(newPost)
 		const savedPost = await newPost.save()
 
 		res.status(201)

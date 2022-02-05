@@ -7,8 +7,6 @@ const postSchema = new Schema({
 	postTime: { type: Date, default: new Date() },
 	text_posted: String,
 	media_posted: String,
-	parentTweetUserName: String,
-	parentTweetId: String,
 	comments: Array,
 	retweets: Array,
 	likes: Array
