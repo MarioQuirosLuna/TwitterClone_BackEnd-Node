@@ -1,6 +1,24 @@
 const postRouter = require('express').Router()
 const Post = require('../models/PostSchema')
 
+/**
+ * GET
+ */
+postRouter.get('/:username/:id', async (req, res, next) => {
+	const {
+		username,
+		id
+	} = req.params
+	Post
+		.findOne({
+			_id: id,
+			username: username
+		})
+		.then(post => res.json(post))
+		.catch(err => next(err))
+})
+
+
 /** 
  * POST
 */
