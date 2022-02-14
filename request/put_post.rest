@@ -1,0 +1,8 @@
+PUT http://localhost:3001/api/post/comment/@UserTest/61fd76211689fb7ea7374c94
+Content-Type: application/json
+
+{
+    "userComment": "@UserTest",
+    "comment": "new comment3",
+    "media": null
+}
