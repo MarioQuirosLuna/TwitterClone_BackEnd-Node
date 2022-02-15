@@ -51,7 +51,9 @@ postRouter.post('/', async (req, res, next) => {
 		next(error)
 	}
 })
-
+/**
+ * Comment
+ */
 postRouter.put('/comment/:username/:id', async (req, res, next) => {
 	const {
 		username,
@@ -93,6 +95,62 @@ postRouter.put('/comment/:username/:id', async (req, res, next) => {
 			likes: []
 		}
 
+		post = await Post.findByIdAndUpdate(id, newPostInfo, { new: true })
+
+		res.json(post)
+
+	} catch (error) {
+		next(error)
+	}
+
+})
+
+/**
+ * Like
+ */
+postRouter.put('/like/:username/:id', async (req, res, next) => {
+	const {
+		username,
+		id,
+	} = req.params
+	const {
+		userLiked
+	} = req.body
+
+	try {
+		let post = await Post.findOne({ _id: id, username: username })
+		let userNewLike = await User.findOne({ username: userLiked })
+
+		if (!post) return res.status(404).send({ error: 'post not found' })
+
+		let newPostInfo = {
+			user_photo: post.user_photo,
+			nameUser: post.nameUser,
+			username: post.username,
+			postTime: post.postTime,
+			text_posted: post.text_posted,
+			media_posted: post.media_posted,
+			comments: post.comments,
+			retweets: [],
+			likes: []
+		}
+		const isUnlike = post.likes.find(like => like.username === userNewLike.username)
+
+		if (!isUnlike) {
+			let newLike = {
+				user_photo: userNewLike.user_photo,
+				nameUser: userNewLike.name,
+				username: userNewLike.username
+			}
+
+			newPostInfo = {
+				likes: [].concat(newLike).concat(post.likes)
+			}
+		} else {
+			newPostInfo = {
+				likes: post.likes.filter(like => like.username !== userNewLike.username)
+			}
+		}
 		post = await Post.findByIdAndUpdate(id, newPostInfo, { new: true })
 
 		res.json(post)
