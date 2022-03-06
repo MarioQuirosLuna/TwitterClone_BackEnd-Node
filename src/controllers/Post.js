@@ -52,6 +52,25 @@ postRouter.post('/', async (req, res, next) => {
 	}
 })
 /**
+ * DELETE
+ */
+postRouter.delete('/delete/:username/:id', async (req, res, next) => {
+	const {
+		username,
+		id
+	} = req.params
+	Post
+		.findOne({
+			_id: id,
+			username: username
+		})
+		.then(post => post.remove())
+		.then(res.status(200)
+			.send({ deleted: `post ${id} of user ${username} deleted` }))
+		.catch(err => next(err))
+})
+
+/**
  * Comment
  */
 postRouter.put('/comment/:username/:id', async (req, res, next) => {
