@@ -3,7 +3,7 @@ GET http://localhost:3001/api/home
 
 ####
 
-GET http://localhost:3001/api/post/@UserTest/61fd76211689fb7ea7374c94
+GET http://localhost:3001/api/post/@UserTest/621272848701ad0b4dba6aa7
 
 ####
 

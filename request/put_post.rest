@@ -1,5 +1,5 @@
 //New comment
-PUT http://localhost:3001/api/post/comment/@UserTest/61fd76211689fb7ea7374c94
+PUT http://localhost:3001/api/post/comment/@UserTest/621272848701ad0b4dba6aa7
 Content-Type: application/json
 
 {

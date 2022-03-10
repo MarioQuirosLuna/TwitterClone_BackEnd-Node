@@ -92,7 +92,7 @@ postRouter.put('/comment/:username/:id', async (req, res, next) => {
 
 		let newComment = {
 			user_photo: userNewComment.user_photo,
-			nameUser: userNewComment.nameUser,
+			nameUser: userNewComment.name,
 			username: userNewComment.username,
 			postTime: new Date(),
 			text_posted: comment,
