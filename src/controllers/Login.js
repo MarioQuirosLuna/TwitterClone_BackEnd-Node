@@ -10,7 +10,6 @@ loginRouter.get('/', async (req, res, next) => {
 		email,
 		phone
 	} = req.body
-	console.log(req.body)
 	try {
 		let user
 
