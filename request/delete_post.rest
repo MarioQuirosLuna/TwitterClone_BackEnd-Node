@@ -1,0 +1,5 @@
+### GET
+GET http://localhost:3001/api/post/@UserTest/621271528701ad0b4dba6a8b
+
+### DELETE
+DELETE  http://localhost:3001/api/post/delete/@UserTest/621271528701ad0b4dba6a8b
