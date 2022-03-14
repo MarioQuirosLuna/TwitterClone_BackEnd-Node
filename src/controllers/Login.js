@@ -1,10 +1,41 @@
 const loginRouter = require('express').Router()
 const User = require('../models/UserSchema')
 
+/** 
+ * Verification
+*/
+loginRouter.post('/verify', async (req, res, next) => {
+	const {
+		username,
+		email,
+		phone
+	} = req.body
+	try {
+		let user
+
+		user = await User.findOne({
+			username: username
+		})
+		if (user) return res.json({ data: username })
+		user = await User.findOne({
+			email: email
+		})
+		if (user) return res.json({ data: email })
+		user = await User.findOne({
+			phone: phone
+		})
+		if (user) return res.json({ data: phone })
+		res.json(false)
+
+	} catch (error) {
+		next(error)
+	}
+})
+
 /**
  * Login
  */
-loginRouter.get('/', async (req, res, next) => {
+loginRouter.post('/', async (req, res, next) => {
 	const {
 		username,
 		email,
