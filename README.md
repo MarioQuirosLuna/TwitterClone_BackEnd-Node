@@ -80,6 +80,8 @@
    
    * ![Express](https://img.shields.io/badge/express-v.4.17.2-111)
    * ![Mongoose](https://img.shields.io/badge/Mongoose-v.6.1.5-111)
+   * ![Cors](https://img.shields.io/badge/cors-v2.8.5)
+   * ![Dotenv](https://img.shields.io/badge/dotenv-v14.2.0)
 
    ### 👉 Installation.
    
@@ -118,5 +120,7 @@
 [![LinkedIn](https://custom-icon-badges.herokuapp.com/badge/-LinkedIn%20Isabel%20Portuguez%20Calderón-%230A66C2?style=flat&logo=LinkedIn&logoColor=white&labelColor=111)](https://www.linkedin.com/in/isabel-portuguez-calderón-142b4b229)
 [![Twitter URL](https://img.shields.io/twitter/url?label=Twitter%20%40IsaPortuguezC&style=social&url=https%3A%2F%2Ftwitter.com%2FIsaPortuguezC)](https://twitter.com/IsaPortuguezC)
 
+* Jorge Madrigal Solano
+* Bryan Soto Ureña
 
 ## 💜 Acknowledgments.
