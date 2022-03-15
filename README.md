@@ -80,8 +80,8 @@
    
    * ![Express](https://img.shields.io/badge/express-v.4.17.2-111)
    * ![Mongoose](https://img.shields.io/badge/Mongoose-v.6.1.5-111)
-   * ![Cors](https://img.shields.io/badge/cors-v2.8.5)
-   * ![Dotenv](https://img.shields.io/badge/dotenv-v14.2.0)
+   * ![Cors](https://img.shields.io/badge/cors-v2.8.5-111)
+   * ![Dotenv](https://img.shields.io/badge/dotenv-v14.2.0-111)
 
    ### 👉 Installation.
    
