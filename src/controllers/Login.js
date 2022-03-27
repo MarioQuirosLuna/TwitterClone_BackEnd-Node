@@ -1,5 +1,6 @@
 const loginRouter = require('express').Router()
 const User = require('../models/UserSchema')
+const bcrypt = require('bcrypt')
 
 /** 
  * Verification
@@ -39,7 +40,8 @@ loginRouter.post('/', async (req, res, next) => {
 	const {
 		username,
 		email,
-		phone
+		phone,
+		password
 	} = req.body
 	try {
 		let user
@@ -57,8 +59,15 @@ loginRouter.post('/', async (req, res, next) => {
 				phone: phone
 			})
 		}
+		const passwordCorrect = (user === null)
+			? false
+			: await bcrypt.compare(password, user.password)
 
-		res.json(user)
+		if (!(user && passwordCorrect)) {
+			res.status(401).json({ ErrorLogin: 'Invalid user or password' })
+		} else {
+			res.json(user)
+		}
 	} catch (error) {
 		next(error)
 	}
@@ -76,7 +85,11 @@ loginRouter.post('/register', async (req, res, next) => {
 		user_password,
 		user_birthday
 	} = req.body
+
 	try {
+		const SALT_ROUNDS = 10
+		const passwordHash = await bcrypt.hash(user_password, SALT_ROUNDS)
+
 		let newUser = new User({
 			user_photo: '',
 			image_bg: '',
@@ -84,7 +97,7 @@ loginRouter.post('/register', async (req, res, next) => {
 			username: `@${user_name}`,
 			email: user_email,
 			phone: user_phone,
-			password: user_password,
+			password: passwordHash,
 			birthday: user_birthday,
 			description: '',
 			following: [],
