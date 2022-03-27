@@ -7,6 +7,7 @@ const userSchema = new Schema({
 	username: String,
 	email: String,
 	phone: String,
+	password: String,
 	birthday: String,
 	description: String,
 	joined_date: { type: Date, default: new Date() },

@@ -73,6 +73,7 @@ loginRouter.post('/register', async (req, res, next) => {
 		user_name,
 		user_email,
 		user_phone,
+		user_password,
 		user_birthday
 	} = req.body
 	try {
@@ -83,6 +84,7 @@ loginRouter.post('/register', async (req, res, next) => {
 			username: `@${user_name}`,
 			email: user_email,
 			phone: user_phone,
+			password: user_password,
 			birthday: user_birthday,
 			description: '',
 			following: [],
