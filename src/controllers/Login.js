@@ -1,14 +1,47 @@
 const loginRouter = require('express').Router()
 const User = require('../models/UserSchema')
+const bcrypt = require('bcrypt')
 
-/**
- * Login
- */
-loginRouter.get('/', async (req, res, next) => {
+/** 
+ * Verification
+*/
+loginRouter.post('/verify', async (req, res, next) => {
 	const {
 		username,
 		email,
 		phone
+	} = req.body
+	try {
+		let user
+
+		user = await User.findOne({
+			username: username
+		})
+		if (user) return res.json({ data: username })
+		user = await User.findOne({
+			email: email
+		})
+		if (user) return res.json({ data: email })
+		user = await User.findOne({
+			phone: phone
+		})
+		if (user) return res.json({ data: phone })
+		res.json(false)
+
+	} catch (error) {
+		next(error)
+	}
+})
+
+/**
+ * Login
+ */
+loginRouter.post('/', async (req, res, next) => {
+	const {
+		username,
+		email,
+		phone,
+		password
 	} = req.body
 	try {
 		let user
@@ -26,8 +59,15 @@ loginRouter.get('/', async (req, res, next) => {
 				phone: phone
 			})
 		}
+		const passwordCorrect = (user === null)
+			? false
+			: await bcrypt.compare(password, user.password)
 
-		res.json(user)
+		if (!(user && passwordCorrect)) {
+			res.status(401).json({ ErrorLogin: 'Invalid user or password' })
+		} else {
+			res.json(user)
+		}
 	} catch (error) {
 		next(error)
 	}
@@ -42,9 +82,14 @@ loginRouter.post('/register', async (req, res, next) => {
 		user_name,
 		user_email,
 		user_phone,
+		user_password,
 		user_birthday
 	} = req.body
+
 	try {
+		const SALT_ROUNDS = 10
+		const passwordHash = await bcrypt.hash(user_password, SALT_ROUNDS)
+
 		let newUser = new User({
 			user_photo: '',
 			image_bg: '',
@@ -52,6 +97,7 @@ loginRouter.post('/register', async (req, res, next) => {
 			username: `@${user_name}`,
 			email: user_email,
 			phone: user_phone,
+			password: passwordHash,
 			birthday: user_birthday,
 			description: '',
 			following: [],

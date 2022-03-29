@@ -127,9 +127,8 @@ postRouter.put('/comment/:username/:id', async (req, res, next) => {
 /**
  * Like
  */
-postRouter.put('/like/:username/:id', async (req, res, next) => {
+postRouter.put('/like/:id', async (req, res, next) => {
 	const {
-		username,
 		id,
 	} = req.params
 	const {
@@ -137,7 +136,7 @@ postRouter.put('/like/:username/:id', async (req, res, next) => {
 	} = req.body
 
 	try {
-		let post = await Post.findOne({ _id: id, username: username })
+		let post = await Post.findOne({ _id: id })
 		let userNewLike = await User.findOne({ username: userLiked })
 
 		if (!post) return res.status(404).send({ error: 'post not found' })
