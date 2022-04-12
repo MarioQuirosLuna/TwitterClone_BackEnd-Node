@@ -11,6 +11,10 @@
 
 ## ✨ Demo.
 
+Back end deployed in: https://twitter-clone-backend-mongo.herokuapp.com/
+
+Front End deployed in: https://twitter-clone-front-end.vercel.app/
+
 ## 💻 About the project.
 
    ### 📜 Descriptions.
