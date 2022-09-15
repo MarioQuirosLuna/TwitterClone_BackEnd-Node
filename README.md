@@ -19,7 +19,7 @@ Front End deployed in: https://twitter-clone-front-end.vercel.app/
 
    ### 📜 Descriptions.
    
-   It consists of a recreation of Twitter, to put into practice knowledge of both Front-end and Back-end implementing the MERN Stack along with other technologies to add more value to the project.
+   It consists of a recreation of Twitter, to put into practice knowledge of both Front-end and Back-end implementing the MERN Stack along with other technologies to add more value to the project, while fundamental soft skills such as teamwork and communication are put into practice.
    
    ### 🏆 Specifications.
    
