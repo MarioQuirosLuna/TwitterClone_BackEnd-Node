@@ -11,9 +11,7 @@
 
 ## ✨ Demo.
 
-Back end deployed in: https://twitter-clone-backend-mongo.herokuapp.com/
-
-Front End deployed in: https://twitter-clone-front-end.vercel.app/
+Front End: https://github.com/MarioQuirosLuna/TwitterClone_FrontEnd-React/blob/master/README.md
 
 ## 💻 About the project.
 
